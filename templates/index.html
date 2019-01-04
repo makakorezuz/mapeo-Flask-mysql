@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+    {% block title %} Reportes SIDAC {% endblock %}
+
+    {% block content %}
+
+    <div role="tabpanel">
+        <ul role="tablist" class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Inicio</a></li>
+            <li role="presentation" class=""><a href="#semana" aria-controls="semana" role="tab" data-toggle="tab">Semana</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                    <div class="panel-body">
+                        {% for item in data %}
+                            <p>
+                                <button class="btn btn-primary" type="button">
+                                    Fecha {{ item.1 }} <span class="badge">{{ item.0  }}</span>     
+                                </button>
+                            </p>
+                        {% endfor %}  
+                    </div>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="semana">
+                
+                Reporte semanal
+            </div>
+            
+        </div>
+    </div>
+
+
+   
+
+    {% endblock %}
